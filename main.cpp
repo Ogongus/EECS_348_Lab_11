@@ -37,5 +37,9 @@ int main() {
     std::cout << "=== A with rows 2 and 3 swapped ===" << std::endl;
     A.swapRows(2, 3).display();
 
-    // Practice 6: 
+    // Practice 6: Swap columns
+    std::cout << "=== A with columns 0 and 1 swapped ===" << std::endl;
+    A.swapColumns(0, 1).display();
+
+    // Practice 7:
 }
