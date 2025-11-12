@@ -41,5 +41,12 @@ int main() {
     std::cout << "=== A with columns 0 and 1 swapped ===" << std::endl;
     A.swapColumns(0, 1).display();
 
-    // Practice 7:
+    // Practice 7: Update element
+    std::cout << "=== A with element (0,0) updated to 100 ===" << std::endl;
+    A.updateElement(0, 0, 100).display();
+
+    std::cout << "=== A with element (2,3) updated to 999 ===" << std::endl;
+    A.updateElement(2, 3, 999).display();
+
+    return 0;
 }
