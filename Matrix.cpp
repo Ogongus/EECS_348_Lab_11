@@ -26,16 +26,20 @@ Matrix::Matrix() : n(0), data(nullptr) {}
 
 Matrix::Matrix(int size) {
     allocate(size);
-    for (int i = 0; i < n; ++i)
-        for (int j = 0; j < n; ++j)
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < n; ++j) {
             data[i][j] = 0;
+        }
+    }
 }
 
 Matrix::Matrix(const Matrix& other) {
     allocate(other.n);
-    for (int i = 0; i < n; ++i)
-        for (int j = 0; j < n; ++j)
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < n; ++j) {
             data[i][j] = other.data[i][j];
+        }
+    }
 }
 
 Matrix::~Matrix() {
@@ -46,9 +50,11 @@ Matrix& Matrix::operator = (const Matrix& other) {
     if (this != &other) {
         deallocate();
         allocate(other.n);
-        for (int i = 0; i < n; ++i)
-            for (int j = 0; j < n; ++j)
+        for (int i = 0; i < n; ++i) {
+            for (int j = 0; j < n; ++j) {
                 data[i][j] = other.data[i][j];
+            }
+        }
     }
     return *this;
 }
@@ -59,9 +65,11 @@ Matrix Matrix::operator + (const Matrix& other) const {
         return Matrix();
     }
     Matrix result(n);
-    for (int i = 0; i < n; ++i)
-        for (int j = 0; j < n; ++j)
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < n; ++j) {
             result.data[i][j] = data[i][j] + other.data[i][j];
+        }
+    }
     return result;
 }
 
@@ -81,3 +89,35 @@ Matrix Matrix::operator * (const Matrix& other) const {
     }
     return result;
 }
+
+bool Matrix::readFromFile(const std::string& filename, bool second) {
+    std::ifstream file(filename);
+    if (!file.is_open()) {
+        std::cerr << "Cannot open file: " << filename << std::endl;
+        return false;
+    }
+
+    if (second) {
+        // Skip first matrix
+        std::string line;
+        int temp_n;
+        file >> temp_n;
+        for (int i = 0; i < temp_n * temp_n; ++i) {
+            file >> temp_n;
+        }
+    }
+
+    int size;
+    file >> size;
+    deallocate();
+    allocate(size);
+
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < n; ++j) {
+            file >> data[i][j];
+        }
+    }
+    file.close();
+    return true;
+}
+
