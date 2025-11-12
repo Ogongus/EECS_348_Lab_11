@@ -159,3 +159,15 @@ Matrix Matrix::swapRows(int r1, int r2) const {
     return result;
 }
 
+Matrix Matrix::swapColumns(int c1, int c2) const {
+    if (c1 < 0 || c1 >= n || c2 < 0 || c2 >= n) {
+        std::cerr << "Invalid column indices for swap." << std::endl;
+        return *this;
+    }
+    Matrix result = *this;
+    for (int i = 0; i < n; ++i) {
+        std::swap(result.data[i][c1], result.data[i][c2]);
+    }
+    return result;
+}
+
