@@ -53,3 +53,15 @@ Matrix& Matrix::operator = (const Matrix& other) {
     return *this;
 }
 
+Matrix Matrix::operator + (const Matrix& other) const {
+    if (n != other.n) {
+        std::cerr << "Matrix size mismatch in addition." << std::endl;
+        return Matrix();
+    }
+    Matrix result(n);
+    for (int i = 0; i < n; ++i)
+        for (int j = 0; j < n; ++j)
+            result.data[i][j] = data[i][j] + other.data[i][j];
+    return result;
+}
+
