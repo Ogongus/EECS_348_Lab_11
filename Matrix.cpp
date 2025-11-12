@@ -131,3 +131,11 @@ void Matrix::display() const {
     std::cout << std::endl;
 }
 
+int Matrix::mainDiagonalSum() const {
+    int sum = 0;
+    for (int i = 0; i < n; ++i) {
+        sum += data[i][j];
+    }
+    return sum;
+}
+
