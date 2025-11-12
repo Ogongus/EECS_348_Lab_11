@@ -121,3 +121,13 @@ bool Matrix::readFromFile(const std::string& filename, bool second) {
     return true;
 }
 
+void Matrix::display() const {
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < n; ++j) {
+            std::cout << std::setw(4) << data[i][j];
+        }
+        std::cout << std::endl;
+    }
+    std::cout << std::endl;
+}
+
