@@ -45,4 +45,6 @@ class Matrix {
 
         // Getter
         int getSize() const {return n;}
-}
+};
+
+#endif
