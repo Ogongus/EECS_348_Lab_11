@@ -38,3 +38,7 @@ Matrix::Matrix(const Matrix& other) {
             data[i][j] = other.data[i][j];
 }
 
+Matrix::~Matrix() {
+    deallocate();
+}
+
