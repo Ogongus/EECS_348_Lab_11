@@ -5,5 +5,13 @@
 #include <iostream>
 
 class Matrix {
+    private:
+        int n;
+        int** data;
+
+        void allocate(int size);
+        void deallocate();
     
+    public:
+        //
 }
