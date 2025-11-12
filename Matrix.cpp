@@ -134,14 +134,14 @@ void Matrix::display() const {
 int Matrix::mainDiagonalSum() const {
     int sum = 0;
     for (int i = 0; i < n; ++i) {
-        sum += data[i][j];
+        sum += data[i][i];
     }
     return sum;
 }
 
 int Matrix::secondaryDiagonalSum() const {
     int sum = 0;
-    for (int = 0; i < n; ++i) {
+    for (int i = 0; i < n; ++i) {
         sum += data[i][n - 1 - i];
     }
     return sum;
