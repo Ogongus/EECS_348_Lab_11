@@ -30,5 +30,12 @@ int main() {
     std::cout << "Main diagonal sum: " << A.mainDiagonalSum() << std::endl;
     std::cout << "Secondary diagonal sum: " << A.secondaryDiagonalSum() << std::endl;
 
-    // Practice 5:
+    // Practice 5: Swap rows (0 and 1, then 2 and 3)
+    std::cout << "=== A with rows 0 and 1 swapped ===" << std::endl;
+    A.swapRows(0, 1).display();
+
+    std::cout << "=== A with rows 2 and 3 swapped ===" << std::endl;
+    A.swapRows(2, 3).display();
+
+    // Practice 6: 
 }
