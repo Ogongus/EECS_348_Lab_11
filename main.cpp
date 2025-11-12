@@ -25,5 +25,10 @@ int main() {
     Matrix D = A * B;
     D.display();
 
-    
+    // Practice 4: Diagonal sums
+    std::cout << "=== Diagonal Sums of A ===" << std::endl;
+    std::cout << "Main diagonal sum: " << A.mainDiagonalSum() << std::endl;
+    std::cout << "Secondary diagonal sum: " << A.secondaryDiagonalSum() << std::endl;
+
+    // Practice 5:
 }
