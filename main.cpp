@@ -12,6 +12,13 @@ int main() {
 
     std::cout << "=== Reading Matrix B from input.txt ===" << std::endl;
     if (!B.readFromFile("input.txt", true)) return 1;
-    std::cout << "Matrix B:" << std:endl;
+    std::cout << "Matrix B:" << std::endl;
     B.display();
+
+    // Practice 2: Addition
+    std::cout << "=== A + B ===" << std::endl;
+    Matrix C = A + B;
+    C.display();
+
+    
 }
