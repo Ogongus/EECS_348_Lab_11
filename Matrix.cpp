@@ -31,3 +31,10 @@ Matrix::Matrix(int size) {
             data[i][j] = 0;
 }
 
+Matrix::Matrix(const Matrix& other) {
+    allocate(other.n);
+    for (int i = 0; i < n; ++i)
+        for (int j = 0; j < n; ++j)
+            data[i][j] = other.data[i][j];
+}
+
