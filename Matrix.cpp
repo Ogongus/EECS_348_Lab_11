@@ -11,3 +11,14 @@ void Matrix::allocate(int size) {
     }
 }
 
+void Matrix::deallocate() {
+    if (data) {
+        for (int i = 0; i < n; ++i) {
+            delete[] data [i];
+        }
+        delete[] data;
+        data = nullptr;
+    }
+    n = 0;
+}
+
