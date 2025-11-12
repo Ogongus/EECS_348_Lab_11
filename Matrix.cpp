@@ -22,3 +22,12 @@ void Matrix::deallocate() {
     n = 0;
 }
 
+Matrix::Matrix() : n(0), data(nullptr) {}
+
+Matrix::Matrix(int size) {
+    allocate(size);
+    for (int i = 0; i < n; ++i)
+        for (int j = 0; j < n; ++j)
+            data[i][j] = 0;
+}
+
