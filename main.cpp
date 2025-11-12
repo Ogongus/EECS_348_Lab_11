@@ -21,7 +21,7 @@ int main() {
     C.display();
 
     // Practice 3: Multiplication
-    std::cout << "=== A * B ===" std::endl;
+    std::cout << "=== A * B ===" << std::endl;
     Matrix D = A * B;
     D.display();
 
