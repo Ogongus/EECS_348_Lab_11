@@ -147,3 +147,15 @@ int Matrix::secondaryDiagonalSum() const {
     return sum;
 }
 
+Matrix Matrix::swapRows(int r1, int r2) const {
+    if (r1 < 0 || r1 >= n || r2 < 0 || r2 >= n) {
+        std::cerr << "Invalid row indices for swap." << std:: endl;
+        return *this;
+    }
+    Matrix result = *this;
+    for (int j = 0; j < n; ++j) {
+        std::swap(result.data[r1][j], result.data[r2][j]);
+    }
+    return result;
+}
+
