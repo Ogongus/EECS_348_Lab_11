@@ -65,3 +65,19 @@ Matrix Matrix::operator + (const Matrix& other) const {
     return result;
 }
 
+Matrix Matrix::operator * (const Matrix& other) const {
+    if (n != other.n) {
+        std::cerr << "Matrix size mismatch in multiplication!" << std::endl;
+        return Matrix();
+    }
+    Matrix result(n);
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < n; ++j) {
+            result.data[i][j] = 0;
+            for (int k = 0; k < n; ++k) {
+                result.data[i][j] += data[i][k] * other.data[k][j];
+            }
+        }
+    }
+    return result;
+}
