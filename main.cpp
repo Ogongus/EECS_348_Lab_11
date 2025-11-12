@@ -20,5 +20,10 @@ int main() {
     Matrix C = A + B;
     C.display();
 
+    // Practice 3: Multiplication
+    std::cout << "=== A * B ===" std::endl;
+    Matrix D = A * B;
+    D.display();
+
     
 }
