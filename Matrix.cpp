@@ -171,3 +171,12 @@ Matrix Matrix::swapColumns(int c1, int c2) const {
     return result;
 }
 
+Matrix Matrix::updateElement(int row, int col, int value) const {
+    if (row < 0 || row >= n || col < 0 || col >= n) {
+        std::cerr << "Invalid indices for update!" << std::endl;
+        return *this;
+    }
+    Matrix result = *this;
+    result.data[row][col] = value;
+    return result;
+}
