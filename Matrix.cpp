@@ -139,3 +139,11 @@ int Matrix::mainDiagonalSum() const {
     return sum;
 }
 
+int Matrix::secondaryDiagonalSum() const {
+    int sum = 0;
+    for (int = 0; i < n; ++i) {
+        sum += data[i][n - 1 - i];
+    }
+    return sum;
+}
+
